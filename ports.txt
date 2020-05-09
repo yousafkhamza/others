@@ -6,4 +6,3 @@
 1500: ISPmanager
 8880: Plesk
 8443: Plesk
-53: DNS
