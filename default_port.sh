@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 #wget port file
 wget https://github.com/YousafKHamza/others/raw/master/ports.txt 
