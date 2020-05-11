@@ -6,3 +6,6 @@
 1500: ISPmanager
 8880: Plesk
 8443: Plesk
+8090: CyberPanel
+8000: Ajenti
+8080: TinyCP,ISPConfig and Nginx or litespeed proxy using this port so please check manualy: netstat -ntlp | grep 8080
