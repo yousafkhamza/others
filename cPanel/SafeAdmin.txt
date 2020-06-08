@@ -129,9 +129,613 @@ Where MySQL stores the update information for MySQL/MariaDB.
 Where cPanel stores the logs for MySQL/MariaDB.
 The databases on the system: this is the default data directory.
 
+In the following command, what output redirection is occurring?
+
+find / \( -type f -o -type d \) -perm /o+w 2>/dev/null
+
+STDERR is being redirected to /dev/null, dropping it from the resulting output.---right 
+STDOUT is being redirected to /dev/null, dropping it from the resulting output.
+STDERR is being redirected to STDIN via /dev/null.
+STDOUT is being redirected to /dev/null, for later reference.
+
+
+What is the Apache configuration directive that specifies the folder location from where a VirtualHost's static files are served from?
+
+DocumentRoot
+
+Which of the following is a working command that would result in disabling a yum repository (represented here by repositoryname)?
+
+yum-config-manager --disable repositoryname -- right
+yum-config-repos disable "repositoryname"
+yum disable --reponame=repositoryname
+yum repo-manage --disable=repositoryname
+
+Your client has a block of IP addresses routed to their server, with the subnet 192.168.0.48/29. How many usable IP addresses are provided within this block?
+
+None of these.
+14
+30
+2
+6---right
+
+
+What is the difference between the /etc/fstab file and the /etc/mtab file?
+
+The mtab file contains filesystems to be mounted at boot time, and the fstab file contains filesystems that are currently mounted.
+The fstab file is hard linked to the /proc/mounts file, and the mtab file contains the output of the most recent execution of fdisk -l.
+The fstab file and the mtab file are symbolic links of each other, and are both present only to allow for improved compatibility with older devices.
+The fstab file contains filesystems to be mounted at boot time, and the mtab file contains filesystems that are currently mounted. --correct
+
+answs 4
+
+Of the partitions shown below, which is used to store inactive pages in memory, when the system's physical RAM has been fully utilized?
+
+swap
+/vm
+/boot
+tmpfs
+
+answs swap
+
+
+Which of the following HTTP error codes indicates a server-side error?
+
+404
+302
+401
+502 --right
+
+Which of the following options correctly describes where the target path of a symlink is stored, assuming that it exists on a standard ext3 or ext4 file system?
+
+In the file descriptor.
+None of these.
+In an environment variable.
+In an inode. -- right
+In memory buffer.
+
+From the following options, which one accurately represents the frequency of this task's execution?
+30 */2 * * * /usr/local/cpanel/bin/mysqluserstore >/dev/null 2>&1
+
+None of these. -- right
+30 seconds after the 2nd minute of each hour.
+On the 30th of February.
+Once every other hour, on the 30 minute mark.-- right
+At 2:30AM server-time, daily.
+
+What are the default ports used for HTTP and HTTPS communication? In the text box that follows, write the two port numbers in any order, separated either by a space, or the word "and" (eg. "1 and 2", or "1 2").
+
+80 and 443
+
+Which of the following exim commands would output the number of messages that currently exist in the Exim mail queue?
+
+exim -bp
+exim -bt
+exim -bpc --right
+exim -qcp
+
+In a default mail server setup, which of the following options indicates a port that would need to be allowed through the firewall?
+
+143 --right
+120
+None of these.
+21
+3306
+
+Using the following IPv6 address, determine the amount of IPv6 addresses that are included with this block:
+
+2001:db8::/128
+
+512
+1,073,741,824
+134,217,728
+None of these.
+16
+1 -right
+16,384
+
+Of the following primary system directory trees, which would you be the least likely to backup or restore?
+
+/var
+/proc ---correct
+/usr
+/home
+/tmp
+ 
+Which of the following utilities can you use to print shared library dependencies?
+
+echo $LIBDEP
+ldconfig
+export
+env
+ldd --right
+
+Which of the following commands would list only the hidden files and folders inside a directory?
+
+None of the above.
+ls -la 
+ls -la .*
+ls -la | grep "^."
+ls -lad .* --correct
+
+
+What does the following command do?
+
+ln /home/cpuser/file1 /home/cpuser/file2
+
+Creates a hard link named "file2", pointing to file1. --correct
+Creates a symbolic link named "file1", pointing to file2.
+Creates a symbolic link named "file2", pointing to file1.
+Creates a hard link named "file1", pointing to file2.
+Creates a copy of file1, named "file2".
+
+Which of the following utilities identifies the routing path used across the network to a destination address?
+
+traceroute -ccorect
+netstat
+None of these can be used to do this.
+ping
+All of these can be used to do this.
+nslookup
+dig
+strace
+
+
+If executed, what would the following command do?
+
+> file
+
+None of these are correct.
+Output the contents of "file".
+Result in an empty file called "file". -- correct
+Nothing; this is invalid syntax.
+Return a value of 0 for "false".
+
+
+On a system not using KernelCare, what must take place after a kernel update is performed, in order to use the new kernel?
+
+A system reboot --correct
+Change to runlevel 3
+A rebuild of the RPM database
+A file system check
+
+
+Which of the following methods can you use to verify the status of group and user quotas on a system?
+
+None of these.
+Run the "fdisk -qc" command
+Run the /scripts/initquotas script
+Run the /scripts/fixquotas script
+Run the "quotaon -pa" command -- correct
+Grep for "enabled" in the /var/cpanel/quotas file
+
+Specify the name of the file containing a list of filesystems to be mounted at startup.
+/etc/fstab
+
+Which of the following values represents the version of the kernel currently running on this system, based on the output below? 
+
+# uname -a
+Linux srv.webhost.tld 4.9.48-29.el7.x86_64 #1 SMP Fri Sep 8 17:11:38 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+4.9.48 --corect
+x86_64
+SMP 
+srv.webhost.tld
+GNU/Linux
+None of these.
+el7
+
+Which of the following commands does not reboot the system?
+
+init 6
+telinit 0  --correct
+shutdown -r now
+reboot
+
+Which of the following commands would allow you to execute the "ls" command whenever you enter "list", when using the BASH shell?
+
+alias "ls"="list"
+None of these would work.
+alias list="ls"   --corect
+alias "list" as "ls"
+alias list "ls"
+
+You set an audit watch on a user's index.php file with the following command:
+
+auditctl -w /home/cpuser/public_html/index.php -p war -k cpuser-index
+With the audit parameters set by this command, which of the following permissions would not be monitored?
+
+Writes
+None of these.
+Executes - answer
+Reads
+Attribute Changes
+
+Which of the following is not a method of determining the server's 5-minute load average?
+
+top
+w
+All of these can be used. - answer
+sar
+
+3SCENARIO:
+
+Your MySQL server is crashing upon startup. Upon reviewing the logs, it appears that the InnoDB engine is responsible. You decide to try using the 
+
+innodb_force_recovery setting within your /etc/my.cnf file in an attempt to further diagnose the issue.
+
+You plan to remove this setting as soon as you've completed your investigation, but in the meantime, which of the following values should you avoid using to prevent 
+
+potential damage to customer data? (Select all that apply.)
+
+
+
+innodb_force_recovery = 3
+innodb_force_recovery = 4- ans
+innodb_force_recovery = 6 ans
+innodb_force_recovery = 1
+ 
+
+Your customer is reporting that, after configuring a number of additional IP addresses on their server, only about 9 of them are actually working. They also report 
+
+that, when restarting the ipaliases service, they receive the following error:
+
+RTNETLINK answers: Numerical result out of range
+You run ifconfig and notice the following secondary interfaces:
+
+eth10015515:cp1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.122.209.67  netmask 255.255.255.192  broadcast 10.122.209.127
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.193  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.194  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.195  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.196  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp6: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.197  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp7: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.198  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.199  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+
+eth10015515:cp9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.79.18.200  netmask 255.255.255.240  broadcast 10.79.18.207
+        ether 00:0c:29:ab:2e:11  txqueuelen 1000  (Ethernet)
+These are the only additional IP addresses showing, though. They report that they should be showing 22 additional IP addresses. Of the following choices, which would 
+
+have a higher likelihood of being the source of the issue here?
+
+
+The discrepancy in the broadcast address between cp1 and the remaining secondary interfaces indicates that there is likely to be a routing issue that is causing the 
+
+interface configuration to break.
+The maximum number of IP addresses assigned to this server is incorrect for the subnet given to them, which is indicated by the "Numerical result out of range" error 
+
+in reference to the subnet mask calculation.
+The maximum number of characters in the interface names was exceeded after the 9th secondary interface because of the additional digit was introduced in the interface 
+
+name.- answer
+The maximum number of IP addresses that can be bound per interface is 10, meaning that the primary IP address in addition to the 9 secondary IP addresses have caused 
+
+this interface to reach its maximum.
+
+Your customer has attempted to set up quotas in their cPanel & WHM environment, however they are still reporting that quotas are not functioning as expected.
+
+They are using an XFS filesystem on a CentOS 7 environment, but you are able to confirm that they have performed the necessary reboots and script executions needed to 
+
+accommodate for this.
+
+Given this information, which of the following options would be the best troubleshooting step to attempt next?
+
+
+Remount the root partition with the "journal" option, then run /scripts/initquotas.
+Disable Cache Disk Quota Information in Tweak Settings. - answer
+Run the /scripts/fixquotas script. 
+Delete the quota files in the root directory, then run /scripts/initquotas again.
+
+Your customer has attempted to set up quotas in their cPanel & WHM environment, however they are still reporting that quotas are not functioning as expected.
+
+They are using an XFS filesystem on a CentOS 7 environment, but you are able to confirm that they have performed the necessary reboots and script executions needed to 
+
+accommodate for this.
+
+Given this information, which of the following options would be the best troubleshooting step to attempt next?
+
+
+Remount the root partition with the "journal" option, then run /scripts/initquotas.
+Disable Cache Disk Quota Information in Tweak Settings.
+Run the /scripts/fixquotas script.
+Delete the quota files in the root directory, then run /scripts/initquotas again.
+
+
+You set an audit watch on a user's index.php file with the following command:
+
+auditctl -w /home/cpuser/public_html/index.php -p war -k cpuser-index
+What does cpuser-index represent in this example?
+
+
+The label identifying the type of indexing to apply to this audit.- - answer
+None of these.
+The user identifier for the file being audited.
+The comment to append each of the file's audit results.
+The unique filter key for the audit rule.
+
+What network service or protocol is indicated in the output of the command tcpdump -nli eth1 ‘udp’, shown below?
+
+13:03:17.277327 IP 192.168.123.5.1065 > 192.168.5.112.53: 43653+ A? lpi.org. (25)
+13:03:17.598624 IP 192.168.5.112.53 > 192.168.123.5.1065: 43653 1/0/0 A
+24.215.7.109 (41)
+
+SMTP
+ICMP
+FTP
+DNS - answer
+MySQL
+HTTP
+Your customer reports that they are experiencing a MySQL service failure. After logging into the server and taking a look at the logs, you notice that the InnoDB 
+
+engine is at fault. Which of the following actions would not be an appropriate next step?
+
+Rename the ib_logfile0 and ib_logfile1 files, allowing InnoDB to generate new copies on the next MySQL start-up.
+Disable the InnoDB engine using the /etc/my.cnf file, then try to start the MySQL service again.
+Make a backup of the MySQL data directory in its current state. 
+Delete the ibdata1 file in the MySQL data directory, so that InnoDB can generate a new copy on the next MySQL start-up.- answer
+ 
+Given the following options, which utility would be best for monitoring the child processes of tasks specified?
+
+pcmon
+pidstat - ans
+pidlist
+procmon
+ 
+What does PPID stand for, when shown within specific ps or top output?
+
+Process Priority Identification
+Process Path Identification
+Port Protocol Identification
+Parent Process Identification - answer
+
+Your customer's default system PHP configuration specifies for PHP to use the America/Caracas time zone. However, they report that, when accessing 
+
+http://domain.tld/testing.php, it seems to be utilizing the Europe/Moscow time zone instead. From the following statements, which most likely explains what is 
+
+occurring here?
+
+The currently selected PHP handler is altering the active time zone at runtime.
+There is likely to be system clock skew on the server, causing errors in time zone calculation.
+Europe/Moscow has been specified as the time zone within a custom, user-level PHP configuration file. - answer
+The script and/or account has likely been compromised by someone from the Europe/Moscow time zone.
+None of these are likely.
+
+Your customer reports that they cannot ping any domains on their server by name, but that they are able to ping the IP addresses associated with the domains, as 
+
+well as the nameservers. Online DNS testing tools also report the domains as being offline. 
+
+Querying the domains locally from within the server works. You perform a  tcpdump, showing that remote queries are reaching the server, but that it is simply not 
+
+responding to them. There are no firewall rules preventing the queries from getting through. Your customer reports that switching to NSD or other nameserver software 
+
+resolves their issue, but that they need to use bind. The named service appears to be up and running properly.
+
+Given the following choices, which describes the issue that has the highest likelihood of being at fault here?
 
 
 
 
+The Apache configuration may be missing VirtualHost entries for the domains on the server. The customer may have attempted to manually modify the httpd.conf, resulting 
+
+in the problem. - answer
+The queries are reaching the server, but are not being handled properly by bind specifically. There may be a problem with the configuration in the named.conf file.
+None of these are applicable. You should determine what the customer needs with bind specifically, and assist the customer in configuring one of the alternate 
+
+nameserver software choices to fit their needs.
+The information stored for each of the domains' nameservers at the registrar may be incorrect, which is affecting the destination of queries for the customer's 
+
+domains.
+
+You notice that there is an httpd process in uninterruptable sleep state (D) when examining your system's current process states:
+
+# ps -eo state,pid,cmd | egrep "httpd|dovecot|cpsrvd"
+S 14817 cpsrvd (SSL) - dormant mode - accepting connections
+S 25311 /usr/sbin/dovecot
+S 25313 dovecot/pop3-login
+S 25314 dovecot/imap-login
+S 25315 dovecot/anvil
+S 25316 dovecot/log
+S 25318 dovecot/pop3-login
+S 25319 dovecot/imap-login
+S 25320 dovecot/config
+S 28158 /usr/local/apache/bin/httpd -k start
+D 32748 /usr/local/apache/bin/httpd -k start
+S 32749 /usr/local/apache/bin/httpd -k start
+S 32750 /usr/local/apache/bin/httpd -k start
+S 32751 /usr/local/apache/bin/httpd -k start
 
 
+
+Of the following commands, would provide you with relevant information to help further verify the cause of this status?
+
+
+cat /proc/32748/io
+stat /usr/local/apache/bin/httpd
+lsof +p 32748 - answer
+ps ffs -H -p 32748
+
+Given the path to a core dump file, which of the following utilities can provide you with the file that generated the core dump?
+
+None of these will provide this information. - answer
+lsattr
+file - answer
+stat
+find
+
+In the following top output, what percentage of iowait is being reported on the system? 
+
+top - 15:30:58 up 223 days, 16:00,  1 user,  load average: 0.02, 0.07, 0.03
+Tasks: 117 total,   1 running, 116 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.3%us,  0.7%sy,  0.0%ni, 98.7%id,  0.3%wa,  0.0%hi,  0.0%si,  0.0%st
+ 
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                       
+  690 root      20   0 13136 1164  884 R  0.3  0.1   0:00.05 top                                            
+ 1704 cpanelso  20   0 2563m 136m 1868 S  0.3  7.3 708:08.21 java                                           
+    1 root      20   0 19352 1140  904 S  0.0  0.1   1:00.62 init                                           
+    2 root      20   0     0    0    0 S  0.0  0.0   0:00.01 kthreadd                                       
+    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0
+
+0.02
+0.7
+None of these.
+98.7
+0.3 - answer
+ 
+
+Which of the following commands would provide you with a history of the server's load averages?
+
+stat
+ps
+sar -answer
+top
+w
+
+Your customer is reporting that, after making php.ini changes into a custom php.ini file that they've placed in their site's public_html folder, their PHP 
+
+application is still not reflecting those changes. You do a quick check on their environment details:
+
+Kernel & Architecture: 2.6.32-642.13.1.el6.x86_64
+OS: CentOS release 6.8 (Final)
+cPanel Version: 11.68.0.23
+Apache: 2.4.16, listening on ports 80 & 443
+PHP: PHP 5.6.30 using DSO & mod_ruid2
+Uptime: 09:27:06 up 2 days
+Load Average: 0.07, 0.07, 0.02
+Disk Usage:
+/ 75% utilized
+tmpfs 0% utilized
+/boot 34% utilized
+
+Given only the above information, what suggestion would you offer the customer?
+
+The customer should use a php.conf file instead.
+The customer should remove mod_ruid2 from their PHP configuration.
+The customer should use a .htaccess file instead. - answer
+The customer should use a .user.ini file instead.
+
+What kind of information is stored within the /var/log/messages file? Choose the option below that best describes its contents.
+
+System message logs, containing kernel messages and messages from applications. - answer
+Mail server logs containing mail headers and SMTP transactions.
+The bash command history for the root user.
+User-input messages exchanged between users on the system.
+
+Upon examining the cron logs, you're seeing messages like those shown below occurring frequently: 
+
+Sep 15 17:56:01 cpserver crond[16106]: (CRON) ERROR (setreuid failed): Resource temporarily unavailable
+Sep 15 17:56:01 cpserver crond[16106]: (cpuser2) ERROR (failed to change user)
+Sep 15 17:56:01 cpserver crond[16112]: (CRON) ERROR (setreuid failed): Resource temporarily unavailable
+Sep 15 17:56:01 cpserver crond[16112]: (cpuser2) ERROR (failed to change user)
+Sep 15 17:56:01 cpserver crond[15973]: (CRON) ERROR (setreuid failed): Resource temporarily unavailable
+Sep 15 17:56:01 cpserver crond[15973]: (cpuser2) ERROR (failed to change user)
+
+
+These are continuing to appear even as you continue to tail -f the log file.
+
+Given the following choices, which of these would be the most appropriate next step to take in diagnosing this issue?
+
+
+Set the immutable attribute on the cpuser2's cron file (chattr +i /var/spool/cron/cpuser2), then run the cPanel update script (/scripts/upcp).
+Compare the user's currently running process count (ps -U cpuser2 | wc -l) with the system's user limits for the user (su - cpuser2 -c "ulimit -u") - answer
+Run netstat with extended information to provide user ID and inode with the connection list (netstat -natpe), compare against cpuser2's user ID (id -u cpuser2), and 
+
+look for excessive connections using cpuser2-owned processes.
+Check the current system load average (cat /proc/loadavg, top, w, or uptime) and compare with the iowait that exists on the system (iostat).
+
+Updates on the client system are failing. As part of the troubleshooting process, you perform an strace of the upcp script. The following entry is seen repeatedly 
+
+throughout the strace output: 
+
+
+capget({_LINUX_CAPABILITY_VERSION_3, 0}, NULL) = -1 EFAULT (Bad address)
+In addition to this, you also identify the following within the dmesg log:
+
+[4083794.715698] sd 0:0:0:0: [sda]  Add. Sense: Unrecovered read error - auto reallocate failed
+[4083794.715702] sd 0:0:0:0: [sda] CDB: Read(10): 28 00 e6 90 00 00 00 00 08 00
+[4083794.715710] end_request: I/O error, dev sda, sector 3868196864
+[4083794.718683] ata1: EH complete
+
+
+Which of the following options best describes the most likely situation demonstrated by the above information?
+
+Excessive iowait
+Kernel out of date.
+Imminent CPU failure.
+High load on server
+Physical drive issues.- answer
+No virtual memory available.
+
+The message below was, according to SpamAssassin's configuration on this server, correctly marked as "not spam".  However, the message is obviously spam, and the 
+
+customer would like to make sure that it gets marked accordingly.
+
+Of the options below, which rule would be the most appropriate to change the assigned score of, in order to improve SpamAssassin's scoring of this message? 
+
+X-Spam-Status: No, score=-0.2
+X-Spam-Score: -1
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "betelgeuse.dnshigh.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ 
+ Content preview:  buy th3se pil ls from good cheap phar macy 4u  now v1c0din privacy gua rante ed [...] 
+ 
+ Content analysis details:   (-0.2 points, 2.0 required)
+ 
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.3 RP_MATCHES_RCVD        Envelope sender domain matches handover relay domain
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.0 T_DKIM_INVALID         DKIM-Signature header exists but is not valid
+X-Spam-Flag: NO
+
+
+
+T_DKIM_INVALID - answer
+DKIM_SIGNED
+HTML_MESSAGE
+RP_MATCHES_RCVD
+
+Which of the following commands would allow you to quickly determine the current value of a particular environment variable? (Select two.)
+
+ldd
+export - ans
+dmesg
+hist
+env- ans
+ 
+
+Which of the following commands will allow you to trace a process' system calls and signals?
+
+lsof
+dmesg
+sysinfo
+strace- answer
+
+Excluding any file paths, what is the command used to examine or control the kernel ring buffer?
+dmesg
