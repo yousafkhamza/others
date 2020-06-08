@@ -1,0 +1,137 @@
+When resetting the MySQL root password from within the WHM interface, what file in the file system is also written to with the new password?
+
+/root/.my.cnf --right
+/var/lib/mysql/root.conf
+/var/cpanel/mysql.conf
+None of these. The password is only stored in the mysql user table.
+/etc/my.cnf
+
+
+Which cPanel script would provide you with the username of the account that owns a particular domain on the server?
+
+/scripts/whichaccount
+/scripts/whoowns-- right
+/scripts/domainowner
+/scripts/updateuserdomains
+
+
+You're attempting to disable cPHulk on a customer's server from the command line using the whmapi1 command. In the following command, choose the missing API function from the available dropdown.
+
+whmapi1 configureservice service=cphulkd enabled=0 monitored=0
+
+
+/usr/local/cpanel/etc/init/stopcphulkd
+=====
+
+What are the default ports for accessing the WHM interface via HTTP and HTTPS? In the text box that follows, write the two port numbers separated either by a space, or the word "and" (eg. "1 and 2", or "1 2").
+
+2086 and 2087
+
+
+
+
+
+
+
+If a specific IP has been blocked by cPHulk, which of the following cPanel scripts can you use to remove this block from the command line? 
+
+
+ /scripts/hulk-unban-ip--- right
+/usr/local/cpanel/bin/removeblock
+/scripts/deblock
+/scripts/unblockip
+
+
+
+When changes are made to the Host Access Control interface in WHM, what file in the file system is being updated?
+
+/etc/hosts
+/etc/hosts.deny
+/etc/hosts.allow--right
+/etc/host.conf
+
+
+A customer reports that, upon logging into their WHM interface, they notice that the environment details shown at the top right of WHM are displaying incorrect information - CENTOS 6.8, when they are currently running CENTOS 7.2. They indicate that they have also recently migrated from a CENTOS 6.8 server.
+
+Which of the following actions describes the best way to approach this issue?
+
+Run '/scripts/gensysinfo' to ensure that the /var/cpanel/sysinfo.config file is up to date.
+Run '/scripts/upcp --force' to ensure that all necessary updates have been performed. --
+Run '/usr/sbin/ntpdate pool.ntp.org' to confirm time synchronization, as it may be reporting outdated information.
+Run a 'yum update' to manually ensure all package and kernel updates have been performed.
+
+
+
+When a domain is parked on top of another domain, which directive in a VirtualHost entry within the httpd.conf is appended with the new domain information?
+
+ServerName
+None of these
+ServerAlias--
+ServerAdmin
+ServerAddon
+
+Which of the following scripts would you use to adjust the default system PHP handler for a particular PHP version, on an EasyApache 4/MultiPHP environment?
+
+/usr/local/cpanel/bin/install_php_inis
+None of the above.---- right  (/usr/local/cpanel/bin/rebuild_phpconf )
+/usr/local/cpanel/bin/build_apache_conf
+/scripts/restartsrv_php
+/scripts/phpini
+
+
+On a cPanel & WHM environment running CentOS 7, which of the following options identifies the most appropriate method of restarting one of the standard installed services (using svcname as the example service)? 
+
+
+
+service svcname restart
+/etc/init.d/svcname restart
+/scripts/restartsrv svcname---right
+systemctl restart svcname.service
+
+Which of the following paths physically contain Apache's httpd.conf file, in a cPanel & WHM environment running EasyApache 4?
+
+/usr/local/lib
+/usr/local/apache/conf
+/var/cpanel/conf/ea4
+/etc/apache2/conf--right
+
+
+On a default cPanel & WHM environment, in which of the following files would I find the configuration value that defines the address or hostname of the MySQL server configured as the active remote mysql server within the MySQL Profiles feature of WHM? 
+
+/var/lib/mysql/my.cnf
+/root/.my.cnf
+/usr/local/cpanel/etc/.my.cnf
+/etc/my.cnf--
+
+Within which of the following files would you find the values specified for configuration changes made within the Tweak Settings interface, in WHM?
+
+None of these.
+/etc/cpanel.conf
+/var/cpanel/cpanel.config --right
+/usr/local/lib/cpanel.conf
+/usr/local/cpanel/conf/cpanel.config
+
+
+Which of the following tools should be used to list or add Standardized Hooks from the command line, within a cPanel & WHM environment?
+
+/usr/local/cpanel/scripts/hook
+/usr/local/cpanel/scripts/hookctl
+/usr/local/cpanel/bin/register_hooks
+/usr/local/cpanel/bin/manage_hooks--right
+
+
+ Which of the following options best describes what is contained in the /var/cpanel/databases directory, on a cPanel & WHM environment?
+
+
+The files used for database mapping.--right
+None of the above.
+Where MySQL stores the update information for MySQL/MariaDB.
+Where cPanel stores the logs for MySQL/MariaDB.
+The databases on the system: this is the default data directory.
+
+
+
+
+
+
+
