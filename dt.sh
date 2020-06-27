@@ -4,7 +4,7 @@
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "Dig +trace result for $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-dig +trace @8.8.8.8 $1 | grep $1 | grep -vE '+trace|RRSIG' |sort
+dig +trace @8.8.8.8 $1 | grep $1 | grep -vE '+trace|RRSIG|;;' |sort
 
 #MX Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
