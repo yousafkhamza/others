@@ -28,7 +28,7 @@ host $IP | awk {'print $5'}
 MX=` dig mx $1 | grep ^"$1" | grep MX | awk {'print $6'} | rev | cut -c2- | rev | head -n1`
 #MX Trying IP Resutl
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-echo  "MX: $MX Telnet trying connect IP Result for the $MX"
+echo  "Telnet trying connect IP Result for the $MX"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "IP: `timeout 1 telnet $MX 587 > ~/Try; timeout 1 telnet $MX 25 >> ~/Try; cat ~/Try | grep -v -e '^$'| grep Trying | head -n1 | awk {'print $2'} | rev | cut -c4- |rev; rm -f ~/Try`"
 
