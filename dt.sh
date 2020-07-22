@@ -4,9 +4,9 @@
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "Dig +trace result for $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-dig +trace @8.8.8.8 $1 | grep $1 | grep -vE '+trace|RRSIG|;' |sort
-#dig +nocmd $1 a +noall +answer
-#dig +nocmd $1 ns +noall +answer
+#dig +trace @8.8.8.8 $1 | grep "$1." | grep -vE 'RRSIG|;' |sort
+dig +nocmd $1 a +noall +answer
+dig +nocmd $1 ns +noall +answer
 
 #MX Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -29,7 +29,7 @@ echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo  "PTR record for $IP"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 #host $IP | awk {'print $5'}
-dig -x $IP +noall +answer
+dig -x $IP +noall +answer | grep -vE ^";|^$"
 
 MX=`dig +nocmd $1 mx +noall +answer | grep ^"$1" | grep MX | awk {'print $6'} | rev | cut -c2- | rev | head -n1`
 #MX=`dig mx $1 | grep ^"$1" | grep MX | awk {'print $6'} | rev | cut -c2- | rev | head -n1`
