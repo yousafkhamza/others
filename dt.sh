@@ -4,28 +4,35 @@
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "Dig +trace result for $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-dig +trace @8.8.8.8 $1 | grep $1 | grep -vE '+trace|RRSIG|;;' |sort
+dig +trace @8.8.8.8 $1 | grep $1 | grep -vE '+trace|RRSIG|;' |sort
+#dig +nocmd $1 a +noall +answer
+#dig +nocmd $1 ns +noall +answer
 
 #MX Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo  "MX Record Result for $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-dig mx $1 | grep ^"$1" | grep MX
+#dig +nocmd $1 txt +noall +answer
+dig +nocmd $1 mx +noall +answer
 
 #TXT Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo  "TXT Record Resutl for $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-dig txt $1 | grep ^"$1" | grep TXT
+#dig txt $1 | grep ^"$1" | grep TXT
+dig +nocmd $1 txt +noall +answer
 
-IP=`dig $1 | grep ^"$1" | grep A | awk {'print $5'} | head -n1`
+IP=`dig +nocmd $1 a +noall +answer | grep ^"$1" | grep A | awk {'print $5'} | head -n1`
+#IP=`dig $1 | grep ^"$1" | grep A | awk {'print $5'} | head -n1`
 #host for IP
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-echo  "Host Command Result for $IP"
+echo  "PTR record for $IP"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-host $IP | awk {'print $5'}
+#host $IP | awk {'print $5'}
+dig -x $IP +noall +answer
 
-MX=` dig mx $1 | grep ^"$1" | grep MX | awk {'print $6'} | rev | cut -c2- | rev | head -n1`
+MX=`dig +nocmd $1 mx +noall +answer | grep ^"$1" | grep MX | awk {'print $6'} | rev | cut -c2- | rev | head -n1`
+#MX=`dig mx $1 | grep ^"$1" | grep MX | awk {'print $6'} | rev | cut -c2- | rev | head -n1`
 #MX Trying IP Resutl
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo  "Telnet trying connect IP Result for the $MX"
