@@ -4,9 +4,10 @@
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "Dig +trace result for $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-#dig +trace @8.8.8.8 $1 | grep "$1." | grep -vE 'RRSIG|;' |sort
-dig +nocmd $1 a +noall +answer
-dig +nocmd $1 ns +noall +answer
+dig +trace @8.8.8.8 $1 | grep "$1." | grep -vE 'RRSIG|;' >> ~/digtrace
+dig +nocmd $1 a +noall +answer >> ~/digtrace
+dig +nocmd $1 ns +noall +answer >> ~/digtrace
+cat ~/digtrace | sort -u -k 5,5| uniq && rm -f ~/digtrace
 
 #MX Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
