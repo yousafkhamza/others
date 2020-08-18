@@ -7,7 +7,7 @@ echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 dig +trace @8.8.8.8 $1 | grep "$1." | grep -vE 'RRSIG|;' >> ~/digtrace
 dig +nocmd $1 a +noall +answer >> ~/digtrace
 dig +nocmd $1 ns +noall +answer >> ~/digtrace
-cat ~/digtrace | sort -u -k 5,5| uniq && rm -f ~/digtrace
+cat ~/digtrace | sort -k 5nr| uniq && rm -f ~/digtrace
 
 #MX Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -47,4 +47,10 @@ echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo "IP: `timeout 2 nc $IP 587 > ~/rre; timeout 2 nc $IP 25 >> ~/rre; cat ~/rre | grep -v -e '^$'| head -n1; rm -f ~/rre`"
 echo "          ------"
 echo "MX: `timeout 2 nc $MX 587 > ~/rre; timeout 2 nc $MX 25 >> ~/rre; cat ~/rre | grep -v -e '^$'| head -n1; rm -f ~/rre`"
+
+#WHOIS Result for Domain
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+echo  "WHOIS Result for the Domain $1"
+echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+whois $1 | grep -E "^Registry Expiry Date:|^Registrar URL:|^Name Server:|^Domain Status:"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
