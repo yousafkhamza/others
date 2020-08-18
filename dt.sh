@@ -14,7 +14,7 @@ echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo  "MX Record Result for $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 #dig +nocmd $1 txt +noall +answer
-dig +nocmd $1 mx +noall +answer
+dig +nocmd $1 mx +noall +answer | sort -k 5
 
 #TXT Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
