@@ -7,7 +7,7 @@ echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 dig +trace @8.8.8.8 $1 | grep "$1." | grep -vE 'RRSIG|;' >> ~/digtrace
 dig +nocmd $1 a +noall +answer >> ~/digtrace
 dig +nocmd $1 ns +noall +answer >> ~/digtrace
-cat ~/digtrace | sort -k 5nr| uniq && rm -f ~/digtrace
+cat ~/digtrace | sort -u -k 5 && rm -f ~/digtrace
 
 #MX Record
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
