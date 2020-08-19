@@ -52,5 +52,5 @@ echo "MX: `timeout 3 nc $MX 587 > ~/rre; timeout 1 nc $MX 25 >> ~/rre; cat ~/rre
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 echo  "WHOIS Result for the Domain $1"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-whois $1 | grep -E "^Registry Expiry Date:|^Registrar URL:|^Name Server:"
+whois $1 | grep -E "^Registry Expiry Date:|^Registrar URL:|^Name Server:|^Expiration Date:|^Status:|^URL:"
 echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
